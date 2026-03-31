@@ -1,37 +1,29 @@
-# Name des Prozesses
 name: Android APK erstellen
 
-# Definiert, wann der Bau starten soll
 on: 
-  workflow_dispatch: # Das erlaubt dir, den Bau manuell per Knopfdruck zu starten
+  workflow_dispatch: 
 
 jobs:
   build:
-    # Wir nutzen einen Windows-Server in der Cloud, weil dieser die besten Android-Tools hat
     runs-on: windows-latest
 
     steps:
-      # 1. Den Code aus dem Repository holen
       - name: Code auschecken
         uses: actions/checkout@v4
 
-      # 2. .NET 8 installieren (die Basis für unseren Code)
-      - name: .NET installieren
+      - name: .NET 10 installieren
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
-      # 3. Das MAUI-Paket für Android nachinstallieren
       - name: MAUI Workload installieren
         run: dotnet workload install maui
 
-      # 4. Die App in eine APK-Datei verwandeln (Kompilieren)
       - name: App zu APK bauen
-        run: dotnet publish OmniApp/OmniApp.csproj -f net8.0-android -c Release -p:AndroidPackageFormat=apk -p:AndroidKeyStore=false
+        run: dotnet publish OmniApp/OmniApp.csproj -f net10.0-android -c Release -p:AndroidPackageFormat=apk -p:AndroidKeyStore=false
 
-      # 5. Die fertige Datei als Download bereitstellen
       - name: APK zum Download bereitstellen
         uses: actions/upload-artifact@v4
         with:
           name: MeinOmniCalculator
-          path: OmniApp/bin/Release/net8.0-android/*-Signed.apk
+          path: OmniApp/bin/Release/net10.0-android/*-Signed.apk
