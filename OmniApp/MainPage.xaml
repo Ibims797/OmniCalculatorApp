@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OmniApp.MainPage"
+             BackgroundColor="#121212">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+            
+            <Label Text="OMNI CALCULATOR" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Cyan" />
+
+            <Picker x:Name="ModusPicker" Title="Wähle einen Modus..." TextColor="White" TitleColor="Gray" BackgroundColor="#1E1E1E">
+                <Picker.Items>
+                    <x:String>Binär zu Dezimal</x:String>
+                    <x:String>Dezimal zu Binär</x:String>
+                    <x:String>Der Einzeiler (Mathe)</x:String>
+                    <x:String>Live-Währungen (€ zu all)</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry x:Name="EingabeFeld" Placeholder="Zahl oder Gleichung eingeben..." TextColor="White" PlaceholderColor="Gray" BackgroundColor="#1E1E1E" />
+
+            <Button Text="BERECHNEN" Clicked="OnBerechnenGeklickt" BackgroundColor="#007ACC" TextColor="White" FontAttributes="Bold" CornerRadius="8" HeightRequest="50" />
+
+            <Label x:Name="ErgebnisLabel" Text="..." FontSize="20" TextColor="LimeGreen" HorizontalOptions="Center" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
