@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OmniApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8705d881c9322612fd98df57f21fb331255df4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b83c474ff10a4c86563432ecd3e4defe93d4708")]
 [assembly: System.Reflection.AssemblyProductAttribute("OmniApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OmniApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
